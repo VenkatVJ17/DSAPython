@@ -16,6 +16,16 @@ Output: [1]
 Explanation: Only 1 appears more than once in the array.
 
 """
+def containsDuplicatesUsingSet(intarr):
+    uniqueElements = set()
+    duplicateElements = set()
+    for i in intarr:
+        if i not in uniqueElements:
+            uniqueElements.add(i)
+        else:
+            duplicateElements.add(i)
+    print(duplicateElements)        
+
 def containsDuplicates(intarr):
     myDict = {}
     for i in range(len(intarr)):
@@ -29,7 +39,7 @@ def containsDuplicates(intarr):
 def main():
     # Sample input list
     intarr = [1, 2, 3, 4, 5, 5,4,2]
-    containsDuplicates(intarr)
+    containsDuplicatesUsingSet(intarr)
 
 if __name__=="__main__":
     main()
